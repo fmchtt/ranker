@@ -1,27 +1,24 @@
 # Ranker
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.0.
+Esse projeto foi feito com o intuito de aprender angular e entender melhor seus conceitos
 
-## Development server
+## Sobre
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Imagem da aplicação](./projeto.png)
 
-## Code scaffolding
+Essa aplicação tem o objetivo de criar um ambiente para rankeamento de coisas, basta tirar print de qualquer coisa e colar (ctrl + v) para o item aparecer na primeira coluna, apos isso pode ser movido para qualquer outra.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+As colunas são personalizaveis, podem ser criadas, removidas e movimentadas na tela para ter um ranqueamento conforme desejar.
 
-## Build
+A cada alteração no quadro a aplicação se salva automaticamente.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Como iniciar a aplicação
 
-## Running unit tests
+Clone o projeto:
+> git clone https://github.com/fmchtt/ranker.git
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Instale as dependencias: 
+> npm install
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Execute a aplicação:
+> npm start
