@@ -1,0 +1,55 @@
+<div class="container" [ngClass]="{ hovered: hovered }" [id]="'column' + row.label">
+  <div
+    class="cell-head"
+    (mouseenter)="onMouseEnterHead()"
+    (mouseleave)="onMouseLeave()"
+  >
+    @if (-1 === hoverIndex()) {
+    <div class="control">
+      <ng-icon
+        name="typTrash"
+        class="icon"
+        (click)="onRemoveColumnClick(row.label)"
+      />
+      <div
+        draggable="true"
+        (drag)="onColumnDrag()"
+        (dragstart)="onColumnDragStart($event)"
+        (dragend)="onColumnDragEnd($event)"
+      >
+        <ng-icon name="typArrowMove" class="icon" />
+      </div>
+    </div>
+    }
+    <p>{{ row.label }}</p>
+  </div>
+  <div
+    class="cell-container"
+    (dragover)="onDragOver($event, row.label)"
+    (dragenter)="onDragEnter($event, row.label)"
+    (drop)="onDrop($event, row.label)"
+  >
+    @for (object of row.objects; track $index) {
+    <div
+      class="cell"
+      @fade
+      draggable="true"
+      (dragstart)="onDragStart($event, row.label, $index)"
+      (dragend)="onDragEnd()"
+      (mouseenter)="onMouseEnter($index)"
+      (mouseleave)="onMouseLeave()"
+    >
+      @if ($index === hoverIndex()) {
+      <div class="control">
+        <ng-icon
+          name="typTrash"
+          class="icon"
+          (click)="onRemoveClick(row.label, $index)"
+        />
+      </div>
+      }
+      <img [src]="object" />
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,111 @@
+.container {
+  height: 150px;
+  background-color: #ffffff1f;
+
+  display: flex;
+  border-radius: 20px;
+}
+
+.hovered {
+  border: 2px solid #ffffffaf;
+}
+
+.cell-container {
+  padding: 8px;
+
+  display: flex;
+  gap: 10px;
+
+  width: 100%;
+}
+
+%cell-shared {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell {
+  @extend %cell-shared;
+  position: relative;
+  width: 200px;
+  border-radius: 12px;
+  cursor: grab;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+
+  .control {
+    width: 60px;
+    height: 40px;
+
+    position: absolute;
+    top: -15px;
+    right: -15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+
+    background-color: #8000ff;
+    padding: 2px;
+    border-radius: 20px;
+
+    .icon {
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.cell:hover {
+  border: 2px solid #ffffffaf;
+  transition: 1s;
+}
+
+.cell-head {
+  @extend %cell-shared;
+  width: 100px;
+  position: relative;
+
+  background-color: #8000ff;
+  font-size: 2rem;
+  font-weight: 700;
+
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  .control {
+    width: 80px;
+    height: 40px;
+
+    position: absolute;
+    top: -15px;
+    right: -15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+
+    background-color: #000000a1;
+    padding: 2px;
+    border-radius: 20px;
+
+    .icon {
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+
+    [draggable="true"] .icon {
+      cursor: grab;
+    }
+  }
+}
